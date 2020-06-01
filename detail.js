@@ -2,7 +2,7 @@ var name;
 
 function getDetails(){
     name=localStorage.getItem("PageToOpen"); //accessing localstorage
-    let url="https://superheroapi.com/api/2396548877303023/search/"+name; //url for api
+    let url="https://superheroapi.com/api.php/2396548877303023/search/"+name; //url for api
   
     let xhrReq=new XMLHttpRequest(); //create XHR request
     xhrReq.onload=function(){
