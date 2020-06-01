@@ -34,7 +34,7 @@ function getEventTarget(e) {
 
 // function called onload of body
 function getDetails(){
-for(let id=1;id<=731;id++)
+for(let id=1;id<=101;id++)
 {
   // create url for fetching names
   let url="https://superheroapi.com/api/2396548877303023/"+id;
