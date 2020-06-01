@@ -36,23 +36,36 @@ function getEventTarget(e) {
 function getDetails(){
 for(let id=1;id<=731;id++)
 {
-  // create url for fetching names
-  let url="https://superheroapi.com/api.php/2396548877303023/"+id;
-
-  // create xhr request
-  let xhrReq=new XMLHttpRequest();
-
-  xhrReq.onload=function(){
-    // onload
-    let responseJSON=JSON.parse(xhrReq.response);
-    // add names of characters to array
-    superheroDetails.push(responseJSON);
-  }
-  xhrReq.open('get',url,true);
-  xhrReq.send();
+  getName(id);
 }
+  // create url for fetching names
 
-// console.log(superheroDetails);
+//   // create xhr request
+//   let xhrReq=new XMLHttpRequest();
+
+//   xhrReq.onload=function(){
+//     // onload
+//     let responseJSON=JSON.parse(xhrReq.response);
+//     // add names of characters to array
+//     superheroDetails.push(responseJSON);
+//   }
+//   xhrReq.open('get',url,true);
+//   xhrReq.send();
+// }
+}
+async function getName(id)
+{
+let url="https://superheroapi.com/api.php/2396548877303023/"+id;
+
+try{var response=await fetch(url)
+
+  var data=await response.json();
+  superheroDetails.push(data.name);
+}catch(error){
+  console.log("error",error);
+};
+
+console.log(superheroDetails);
 
 // using keyup for making suggestions list because keyup gives the full string entered in input
 search.addEventListener('keyup',function(){
@@ -62,7 +75,7 @@ search.addEventListener('keyup',function(){
 
   // filter the values of input and array
   const suggestions=superheroDetails.filter(function(superHero){
-    return superHero.name.toLowerCase().startsWith(input);
+    return superHero.toLowerCase().startsWith(input);
   });
 
   // for each suggestion add to list
@@ -70,7 +83,7 @@ search.addEventListener('keyup',function(){
   {
     // created LI elements
     const li=document.createElement('li');
-    li.innerHTML=suggested.name;
+    li.innerHTML=suggested;
     suggestionPanel.appendChild(li);
  
   });
