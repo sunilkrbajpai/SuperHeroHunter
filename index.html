@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="style.css" type="text/css" rel="stylesheet">
+
+<!-- font awesome -->
+<script src="https://kit.fontawesome.com/5c14fb59bd.js" crossorigin="anonymous"></script>
+
+<title>Super-Hero Hunter JS</title>
+</head>
+
+<!-- calling function onload -->
+<body onload="getDetails()">
+<div id="main">
+  <div id="myDIV" class="header">
+    <h1 style="margin:5px">Super-Hero Hunter JS</h1>
+
+    <!-- input text box autofocus -->
+    <input type="text" id="Input" placeholder="Enter Name of SuperHero" autofocus="autofocus">
+    <i id="searchicon" class="fas fa-search"></i>
+    <br><br>
+
+    <!-- link to favorites page -->
+  <a href="favorites.html">Go to Favorites</a>
+
+  </div>
+
+<!-- ul to shpw suggestions -->
+<ul id="match-list" class="suggestions">
+  
+</ul>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

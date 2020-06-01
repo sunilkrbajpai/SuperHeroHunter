@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="detail.css" type="text/css" rel="stylesheet">
+
+<title>SuperHero Hunter Details</title>
+</head>
+<!-- call fuction on page load -->
+<body onload="getDetails()">
+<div id="main">
+    <h1> Details of SuperHero</h1>
+    <div class="card">
+        <img src="" alt="CHARACTER" style="width:100%;height: 400px;" id="photo">
+        <h1 id="name"></h1>
+        <h3>BIOGRAPHY</h3>
+        <p class="title" id="bio">
+        </p>
+        <h3>Power Stats</h3>
+        <p id="powerstats">
+        </p>
+      <button class="button" onclick="addToFav()">Add to Favorites</button>
+
+      </div>
+
+</div>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+ <!-- scripts added -->
+<script src="detail.js"></script>
+</body>
+</html>
